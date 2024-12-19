@@ -23,9 +23,8 @@ email: fiercekitty131@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   I think this site explains itself
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://catman314.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  Catman314
 
 # Build settings
 theme: minima
@@ -51,3 +50,6 @@ plugins:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
+
+sass:
+  quiet_deps: true
