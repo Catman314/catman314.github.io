@@ -80,3 +80,8 @@ $\exists d, (d\mid n $ and $ 1 < d < n $ and $ d < i) \iff n$ is composite.
 Clearly the forward direction is true. For the backward direction, assume that $n$ is composite, so $n = d\cdot d'$ where $1 < d \le d' < n.$ Then we have $d \le \sqrt{n} < i,$ so $d$ satisfies the condition on the LHS.
 
 QED.
+
+### Takeaway
+Proving the correctness of an algorithm can give an idea of how it works at a deep level. By looking at the loop invariant, we see exactly what happens when we use the sieve of Eratosthenes.
+
+TO BE CONTINUED with runtime analysis
