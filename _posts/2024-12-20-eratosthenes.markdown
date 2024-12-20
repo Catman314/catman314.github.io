@@ -4,17 +4,6 @@ title:  "Proving the Validity of the Sieve of Eratosthenes"
 date:   2024-12-20 09:32:15 -0500
 ---
 
-<script type="text/javascript" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
-<script>
-window.MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\(', '\\)']]
-  }
-};
-</script>
-
 
 ## The Sieve of Eratosthenes
 The sieve of Eratosthenes is a very good way to generate every prime up to some limit $N.$ The algorithm takes an input $N$ and returns a boolean array `is_prime` with size $N+1$ such that `is_prime[n] = true` if and only if `n` is prime. Here is the algorithm written in python.
