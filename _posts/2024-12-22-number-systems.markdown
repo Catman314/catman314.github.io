@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "A Journey of Number Systems"
+date:   2024-12-22 09:32:15 -0500
 ---
 
 This is the first post of a series on calculus.
