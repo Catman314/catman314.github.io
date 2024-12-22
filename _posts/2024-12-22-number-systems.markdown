@@ -3,8 +3,7 @@ layout: post
 title:  "A Journey of Number Systems"
 ---
 
-This is the first post of a series on calculus. Anything hidden by a dropdown is rather advanced.
-
+This is the first post of a series on calculus.
 ### Intro
 > We all know what real numbers are... just decimal expansions... right?
 
