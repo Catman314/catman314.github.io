@@ -72,6 +72,7 @@ Constructing $\mathbb{Q}$ is very similar to constructing $\mathbb{Z}$. Instead 
 <details markdown=1 open>
 <summary>Exercises</summary>
 * Prove that our definition of equivalence is an equivalence relation. Notice that we assume the denominator must be nonzero at some point.
+* The integers are embedded in the rationals by $z \mapsto (z/1)$. Show that this is a homomorphism (verify addition, multiplication, and ordering).
 * $\mathbb{Q,+,\cdot,\le}$ is an ordered field.
 </details>
 
