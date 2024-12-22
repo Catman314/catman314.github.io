@@ -22,8 +22,8 @@ title: Catman's Blog
 email: fiercekitty131@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   I think this site explains itself
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "https://catman314.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://catman314.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  Catman314
 
 # Build settings
