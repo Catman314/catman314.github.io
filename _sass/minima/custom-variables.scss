@@ -1,1 +1,36 @@
 // Placeholder to allow overriding predefined variables smoothly.
+
+// Copied mostly from https://github.com/gbroxey/blog/blob/main/_sass/minima/custom-variables.scss
+blockquote {
+    background: hwb(216 7% 72%) !important;
+    padding: 10px 15px 10px 15px !important;
+    color: hsl(208, 39%, 68%) !important;
+    border-left: 10px solid hsl(210, 25%, 58%) !important;
+    @include relative-font-size(1.0625);
+    font-style: normal !important;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+    i, em {
+        font-style: normal;
+    }
+}
+
+details {
+    background: hwb(117 0% 0% / 0.15) !important;
+    padding: 10px 15px 10px 15px !important;
+    color: hsl(0, 0%, 0%) !important;
+    border-left: 10px solid hsl(119, 100%, 19%) !important;
+    @include relative-font-size(1.0625);
+    font-style: normal !important;
+
+    > :last-child {
+        margin-bottom: 0;
+    }
+
+    i, em {
+        font-style: normal;
+    }
+}
