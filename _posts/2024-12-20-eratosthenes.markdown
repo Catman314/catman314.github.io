@@ -27,7 +27,7 @@ We will pretend that all indexes of `is_prime` are at least 2 (it's easy to see 
 #### Loop Invariant
 The idea is that at the start of each loop, `is_prime[n] = False` if and only if
 
-$$\exists d, (d \mid n$$ and $$1 < d < n$$ and $$d < i).$$
+$$\exists d, (d \mid n \text{ and } 1 < d < n \text{ and } d < i).$$
 
 This is called a *loop invariant*, and it's what we use to verify algorithms involving loops. We prove that a loop invariant holds by induction, so first consider the base case $i=2.$ Note that there is no $d$ such that $1<d<2$, so the base case is true.
 
