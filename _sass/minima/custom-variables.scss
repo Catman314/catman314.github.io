@@ -26,9 +26,11 @@ header a:visited {
 header.site-header {
     border-bottom: 3px dashed hwb(216 32% 19%) !important;
 }
+
 footer {
     border-top: 3px dashed hwb(216 21% 44%) !important;
 }
+
 hr {
     border: 2px solid hwb(216 21% 44%) !important;
 }
@@ -63,6 +65,6 @@ details {
     }
 
     i, em {
-        font-style: italic
+        font-style: italic !important
     }
 }
