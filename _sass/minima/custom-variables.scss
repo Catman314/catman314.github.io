@@ -55,6 +55,7 @@ blockquote {
 details {
     background: hwb(117 0% 0% / 0.15) !important;
     padding: 10px 15px 10px 15px !important;
+    margin: 0px 0px 15px !important;
     color: hwb(216 81% 0%) !important;
     border-left: 10px solid hsl(119, 100%, 19%) !important;
     @include relative-font-size(1.0625);
