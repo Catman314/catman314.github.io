@@ -16,11 +16,21 @@ a:visited {
 }
 
 header a:link {
-    color: hwb(59 54% 0%) !important;
+    color: hwb(152 63% 0%) !important;
 }
 
 header a:visited {
-    color: hwb(59 54% 0%) !important;
+    color: hwb(152 63% 0%) !important;
+}
+
+header.site-header {
+    border-bottom: 3px dashed hwb(216 32% 19%) !important;
+}
+footer {
+    border-top: 3px dashed hwb(216 21% 44%) !important;
+}
+hr {
+    border: 2px solid hwb(216 21% 44%) !important;
 }
 
 blockquote {

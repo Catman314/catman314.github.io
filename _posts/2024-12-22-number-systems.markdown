@@ -19,63 +19,68 @@ This post will explore the number systems: $\mathbb{N},\mathbb{Z},\mathbb{Q}$, a
 {:toc}
 ---
 
-### Natural Numbers
-The natural numbers $\mathbb{N}$ are the numbers $$\{0,1,2,3,\dots\}.$$ Some people omit the 0, but I think it's nicer to include it. They have the following properties (The Peano Axioms):
-* **Givens:** We start with the number $0$ given, as well as a successor operator $S$ (intuitively, think of $S(n)$ as "add 1 to $n$").
-* $0$ is not the successor of a natural number.
-* **$S$ is injective:** Two different numbers can't have the same successor (Think about what happens if they did).
-* **Induction:** Let's say $P$ is some property about natural numbers, Suppose that we know $P(0)$ is true, and also that $P(n) \implies P(n+1)$. Then we can conclude that $P$ is true for every natural number.
-
-Induction is basically an infinite chain of implications
-
-$$P(0) \implies P(1) \implies P(2) \implies P(3) \implies \dots$$
-
-Only the natural numbers satisfy every condition.
-
-We can define addition and multiplication recursively, and their properties (commutativity, associativity, etc.) are proven by induction.
-
-<details markdown=1 open>
-<summary>Exercises</summary>
-* Create recursive definitions of addition, multiplication, and exponents.
-* Prove some properties of addition and multiplication.
-* We say $m\le n$ if and only if there is an integer $k$ such that $n = k + m$.
-* Show that there is only one structure up to isomorphism satisfying the Peano Axioms
-</details>
-
-### The Integers
-Now we want to subtract two numbers, but we realise we can't do $1 - 2$. We need more numbers.
-
-The idea for this construction is to define integers as differences of natural numbers. Following intuition based on prior knowledge, we will make the following definitions.
-* **Addition:** $(a-b) + (c-d) = (a+c) - (b+d)$
-* **Multiplication:** $(a-b)\cdot(c-d) = (ac + bd) - (ad + bc)$
-* **Ordering:** $(a-b)\le (c-d) \iff a+d \le b+c$
-* **Equivalence:** $(a-b) = (c-d) \iff a + d = b + c$
-    * If we want to be formal, this would be an equivalence relation, and $\mathbb{Z}$ would be the equivalence classes.
-
-
-Also, the natural numbers are contained in the integers, using $n \mapsto (n-0).$
-
-<details markdown=1 open>
-<summary>Exercises</summary>
-* Check that addition and multiplication in $\mathbb{Z}$ are well defined.
-* The map $n\mapsto (n-0)$ is an injective homomorphism (addition, multiplication, and ordering must be preserved).
-* Verify that $\mathbb{Z},+,\cdot$ is a ring.
-</details>
-
-### The Rationals
-Constructing $\mathbb{Q}$ is very similar to constructing $\mathbb{Z}$. Instead of differences, we use quotients. Also, we must remember that dividing by $0$ is illegal.
-* **Addition:** $(a/b) + (c/d) = (ad + bc) / bd$
-* **Multiplication:** $(a/b) \cdot (c/d) = ac / bd$
-* **Ordering:** $(a/b)\le(c/d) \iff ad \le bc$
-* **Equivalence:** $(a/b)\equiv (c/d) \iff ad = bc$.
-    * Again, equivalence classes.
-
-<details markdown=1 open>
-<summary>Exercises</summary>
-* Prove that our definition of equivalence is an equivalence relation. Notice that we assume the denominator must be nonzero at some point.
-* The integers are embedded in the rationals by $z \mapsto (z/1)$. Show that this is a homomorphism (verify addition, multiplication, and ordering).
-* $\mathbb{Q,+,\cdot,\le}$ is an ordered field.
-</details>
+I will assume the reader knows simple properties of rational numbers.
 
 ### The Reals
-TO BE CONTINUED
+#### What we Want
+There are some basic facts about real numbers we know intuitively. One of them is the following, called the **Archimedian Property**.
+> For every real number, there is an integer larger than it.
+
+If we restrict the real number in question to be positive, then we can rewrite it as follows:
+
+> For every positive real number, there is a positive rational number less than it.
+
+*Proof Idea:* For every positive real number $x$, it's reciprocal is also real, thus an integer $n$ lies above $1/x$. Therefore, $1/n < x$, and so we've found a positive rational number less than $x$. $\qquad\square$
+
+We can use this to show the interesting conclusion that there is a rational number in *every interval*. Suppose that $x<y$ and take a number $n$ such that $1/n < y-x$. Now place the integer multiples of $1/n$ on the number line, and you'll find that they are so close together that they can't skip over the interval $(x,y)$!
+
+#### Dedekind Cuts
+
+What follows is the thought process that Dedekind may have had searching for a definition of the real numbers.
+
+1. Between every pair of real numbers there will be a rational number.
+2. If $x$ and $y$ are different real numbers, then the rationals greater than $x$ are different than the rationals greater than $y$
+    * The different rational number would be the rational between $x$ and $y$.
+3. What if we *defined* the real numbers to be these sets of "upper bound rationals"?
+
+Now we're getting somewhere! Let's see our definition now
+
+> **Definition of Reals:** A *real number* is a set $A$ of rational numbers such that
+> * $A$ is not empty, but doesn't contain every rational.
+> * If $r\in A$, then every rational bigger than $r$ is also in $A$.
+> * $A$ has no smallest number.
+
+#### Real Arithmetic
+The summary here is that $\mathbb{R}$ is an ordered field. You'll notice that we run into issues with signs, which is annoying. In a future post, I might showcase another way of constructing $\mathbb{R}$ using *Cauchy Sequences*, which doesn't run into this annoying casework and can even be somewhat generalized. For now we will use Dedekind's construction.
+
+* Ordering is simple:
+
+$$x\le y \iff x \supseteq y.$$
+
+* Adding $x$ and $y$ is done by collecting every possible sum of rationals from $x$ and $y$.
+    * Exercise: Show that this is well defined, and adding rationals gives the expected result
+* Negating $x$: Take the set of rationals $r$ such that $r+x>0$.
+    * Exercise: Show that $(\mathbb{R},+)$ is a group.
+* Multiplication is a bit annoying because of signs. If $x$ and $y$ are positive, then we can do the same thing as addition.
+    * Exercise: Again, show that real multiplication is well defined, and multiplying rationals gives the expected result. (This may require some creativity)
+    * What if $x$ or $y$ isn't positive?
+    * Show that $(\mathbb{R}, +, \cdot)$ is a ring.
+* Reciprocal of $x$: If $x$ is positive, take the set of rationals $r$ such that $\frac{1}{r} < x$.
+    * Exercise: Define $1/x$ when $x$ is negative.
+    * Show that $(\mathbb{R}, +, \cdot\)$ is an ordered field.
+
+
+#### The Supremum
+Everything we've done so far with $\mathbb{R}$ is essentially transferring properties of the rationals to the reals. It's time to introduce things specific to the real numbers.
+
+Consider the set of real numbers
+
+$$\{1/2,2/3,3/4,4/5,5/6,\dots\}.$$
+
+<details markdown=1>
+<summary>If I ask you to give me an upper bound of this set, what would you say?</summary><br/>
+If your immediate thought was $1$, you have good intuition! Even though $1$ isn't in the set, it's still the *smallest upper bound* we can achieve.
+</details>
+
+> BEANS
+>> aRE COOL
