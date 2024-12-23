@@ -1,11 +1,33 @@
 // Placeholder to allow overriding predefined variables smoothly.
 
 // Copied mostly from https://github.com/gbroxey/blog/blob/main/_sass/minima/custom-variables.scss
+
+body {
+    background: hwb(216 7% 80%) !important;
+    color: hwb(216 81% 0%) !important;
+}
+
+a:link {
+    color: hwb(216 47% 0%) !important;
+}
+
+a:visited {
+    color: hwb(216 47% 0%) !important;
+}
+
+header a:link {
+    color: hwb(59 54% 0%) !important;
+}
+
+header a:visited {
+    color: hwb(59 54% 0%) !important;
+}
+
 blockquote {
-    background: hwb(216 7% 72%) !important;
+    background: hwb(216 0% 0% / 0.15) !important;
     padding: 10px 15px 10px 15px !important;
-    color: hsl(208, 39%, 68%) !important;
-    border-left: 10px solid hsl(210, 25%, 58%) !important;
+    color: hwb(216 81% 0%) !important;
+    border-left: 10px solid hsl(210, 100%, 50%) !important;
     @include relative-font-size(1.0625);
     font-style: normal !important;
 
@@ -14,14 +36,14 @@ blockquote {
     }
 
     i, em {
-        font-style: normal;
+        font-style: italic !important;
     }
 }
 
 details {
     background: hwb(117 0% 0% / 0.15) !important;
     padding: 10px 15px 10px 15px !important;
-    color: hsl(0, 0%, 0%) !important;
+    color: hwb(216 81% 0%) !important;
     border-left: 10px solid hsl(119, 100%, 19%) !important;
     @include relative-font-size(1.0625);
     font-style: normal !important;
@@ -31,6 +53,6 @@ details {
     }
 
     i, em {
-        font-style: normal;
+        font-style: italic
     }
 }
