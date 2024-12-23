@@ -81,6 +81,3 @@ $$\{1/2,2/3,3/4,4/5,5/6,\dots\}.$$
 <summary>If I ask you to give me an upper bound of this set, what would you say?</summary><br/>
 If your immediate thought was $1$, you have good intuition! Even though $1$ isn't in the set, it's still the *smallest upper bound* we can achieve.
 </details>
-
-> BEANS
->> aRE COOL
