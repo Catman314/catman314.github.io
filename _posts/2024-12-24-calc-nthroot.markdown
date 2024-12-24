@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "What are roots?"
-date:   2024-12-22 09:32:15 -0500
+date:   2024-12-24 09:32:15 -0500
 ---
 
 In this post, we use least upper bounds to show that $n^{th}$ roots exist. There are better ways of doing this with a bit more knowledge, but I find this a good way to get used to working with least upper bounds.
