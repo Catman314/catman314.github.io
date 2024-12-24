@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "A Journey of Number Systems"
+title:  "What are Real Numbers?"
 date:   2024-12-22 09:32:15 -0500
 ---
 
@@ -11,8 +11,6 @@ This is the first post of a series on calculus.
 Real numbers are not just decimal expansions, for a few reasons
 * There is nothing special about the number 10; we could choose any base.
 * Defining addition, subtraction, multiplication and division based on just the decimal expansion is very tedious. There is a better way.
-
-This post will explore the number systems: $\mathbb{N},\mathbb{Z},\mathbb{Q}$, and finally $\mathbb{R}$ and $\mathbb{C}$.
 
 ---
 * TOC
@@ -71,13 +69,27 @@ $$x\le y \iff x \supseteq y.$$
 
 
 #### The Supremum
-Everything we've done so far with $\mathbb{R}$ is essentially transferring properties of the rationals to the reals. It's time to introduce things specific to the real numbers.
+What we've done so far with $\mathbb{R}$ is just transferring properties of the rationals to the reals. It's time to introduce things specific to the real numbers.
 
-Consider the set of real numbers
+<details markdown=1>
+<summary>
+Consider the set
 
 $$\{1/2,2/3,3/4,4/5,5/6,\dots\}.$$
 
-<details markdown=1>
-<summary>If I ask you to give me an upper bound of this set, what would you say?</summary><br/>
-If your immediate thought was $1$, you have good intuition! Even though $1$ isn't in the set, it's still the *smallest upper bound* we can achieve.
+If I ask you to give me an upper bound of this set, what would you say?</summary><br/>
+If your immediate thought was $1$, you have good intuition! Even though $1$ isn't in the set, it's still the *least upper bound* we can achieve.
 </details>
+
+This is the key to the real numbers: **Every set of real numbers which is bounded above has a least upper bound.** We couldn't do this with the rationals; there are sets of rational numbers who's least upper bound is irrational.
+
+> **Theorem:** If $A$ is a nonempty set of real numbers which is bounded above, then $A$ has a least upper bound.
+
+*Proof Sketch:* Let $S$ be the union of all upper bounds of $A$. It's easy to see that $S$ is a real number less than or equal to every upper bound of $A$. Now we only need to show that $S$ is an upper bound. 
+
+Suppose to the contrary that there is some $a\in A$ such that $a > S$. Choose a rational $r$ such that $a > r > S$. Since $r > S$, there is some upper bound $B$ such that $r > B$. But then $a > B$, so we have a contradiction. $\qquad\square$
+
+> **Definition:** 
+* The least upper bound of $A$ is denoted $\sup A$.
+* The greatest lower bound of $A$ is denoted $\inf A$ (this is also $-\sup(-A)$).
+
