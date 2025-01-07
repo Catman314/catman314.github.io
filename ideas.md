@@ -1,0 +1,3 @@
+## Ideas
+
+* Pollard Rho Algorithm
