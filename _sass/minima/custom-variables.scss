@@ -2,10 +2,12 @@
 
 // Copied mostly from https://github.com/gbroxey/blog/blob/main/_sass/minima/custom-variables.scss
 
-// body {
-//     background: hwb(216 7% 80%) !important;
-//     color: hwb(216 81% 0%) !important;
-// }
+body {
+    background: url(/assets/background.png) !important;
+    background-color: hsla(327, 50%, 6%, 100%) !important;
+    background-blend-mode: soft-light !important;
+    background-attachment: fixed !important;
+}
 
 // a:link {
 //     color: hwb(216 47% 0%) !important;
@@ -32,10 +34,10 @@
 // }
 
 em {
-    color: rgb(255, 204, 0);
+    color: rgb(255, 142, 142);
 }
 strong {
-    color: rgb(227, 0, 159);
+    color: rgb(255, 0, 0);
 }
 
 hr {
@@ -47,10 +49,10 @@ center img {
 }
 
 blockquote {
-    background: hwb(216 0% 0% / 0.15) !important;
+    background: hwb(284 18% 25% / 0.15) !important;
     padding: 10px 15px 10px 15px !important;
     color: hwb(216 81% 0%) !important;
-    border-left: 10px solid hsl(210, 100%, 50%) !important;
+    border-left: 10px solid hwb(284 18% 25%) !important;
     @include relative-font-size(1.0625);
     font-style: normal !important;
 
@@ -64,11 +66,11 @@ blockquote {
 }
 
 details {
-    background: hwb(117 0% 0% / 0.15) !important;
+    background: hwb(284 18% 25% / 0.15) !important;
     padding: 10px 15px 10px 15px !important;
     margin: 0px 0px 15px !important;
     color: hwb(216 81% 0%) !important;
-    border-left: 10px solid hsl(119, 100%, 19%) !important;
+    border-left: 10px solid hwb(284 18% 25%) !important;
     @include relative-font-size(1.0625);
     font-style: normal !important;
 
@@ -79,4 +81,14 @@ details {
     i, em {
         font-style: italic !important
     }
+}
+
+summary + div {
+    border-top: 5px solid hwb(284 18% 25% / 0.5);
+    padding-top: 5px;
+    margin-top: 10px;
+}
+
+h3 {
+    color: rgb(107, 255, 211)
 }
