@@ -4,4 +4,4 @@ title: About
 permalink: /about/
 ---
 
-There is no "about".
+Nothing to repore here...
