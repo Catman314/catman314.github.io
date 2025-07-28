@@ -1,7 +1,5 @@
 // Placeholder to allow overriding predefined variables smoothly.
 
-// Copied mostly from https://github.com/gbroxey/blog/blob/main/_sass/minima/custom-variables.scss
-
 body {
     background: url(/assets/background.png) !important;
     background-size: cover;
@@ -95,4 +93,11 @@ h3 {
 img {
     display: block;
     margin: auto;
+}
+
+li.post-entry {
+    border-style: dashed;
+    border-width: 3px;
+    border-color: rgba(255, 255, 255, 0.39);
+    padding: 5px;
 }
