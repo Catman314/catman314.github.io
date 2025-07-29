@@ -3,7 +3,7 @@
 body {
     background: url(/assets/background.png) !important;
     background-size: cover;
-    box-shadow: inset 0 0 0 2000px rgba(27, 7, 40, 0.97);
+    box-shadow: inset 0 0 0 2000px rgba(7, 14, 40, 0.98);
 }
 
 // a:link {
@@ -46,10 +46,10 @@ center img {
 }
 
 blockquote {
-    background: hwb(284 18% 25% / 0.15) !important;
+    background: hwb(222 18% 25% / 0.15) !important;
     padding: 10px 15px 10px 15px !important;
     color: hwb(216 81% 0%) !important;
-    border-left: 10px solid hwb(284 18% 25%) !important;
+    border-left: 6px solid hwb(212 18% 25%) !important;
     @include relative-font-size(1.0625);
     font-style: normal !important;
 
@@ -88,6 +88,14 @@ summary + div {
 
 h3 {
     color: rgb(107, 255, 211)
+}
+
+h4 {
+    color: rgb(243, 209, 73)
+}
+
+h5 {
+    color: rgb(252, 100, 255)
 }
 
 img {

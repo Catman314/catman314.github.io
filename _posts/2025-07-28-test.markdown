@@ -1,9 +1,0 @@
----
-title: EPIC
-author: Catman
-layout: post
----
-
-BEANS ARE SO COOL! I enjoy the greek letter $\mu$.
-
-$$\sum_{k=1}^\infty \frac{1}{k^2} = \frac{\pi^2}{6}$$
