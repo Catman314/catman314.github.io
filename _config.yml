@@ -60,3 +60,5 @@ kramdown:
 
 minima:
   skin: dark
+
+show_excerpts: true
