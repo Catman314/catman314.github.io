@@ -15,7 +15,7 @@ The exponential function, which I will assume exists, is a bijective function $\
 
 $$\exp(x+y) = \exp(x)\exp(y).$$
 
-In other words, $\exp$ is an isomorphism between the additive group of reals and the multiplicative group of positive reals. It's inverse is called $\log$.
+In other words, $\exp$ is an isomorphism between the additive group of reals and the multiplicative group of positive reals. Its inverse is called $\log$.
 
 #### Existence of $n^{th}$ Roots is Easy
 Given some $x\in(0,\infty)$ and a positive integer $n$, I will show that there exists exactly one $y\in (0,\infty)$ such that $y^n = x$.
