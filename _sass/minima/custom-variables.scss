@@ -46,10 +46,12 @@ center img {
 }
 
 blockquote {
-    background: hwb(222 18% 25% / 0.15) !important;
+    background: hwb(221 26% 42% / 0.15) !important;
     padding: 10px 15px 10px 15px !important;
-    color: hwb(216 81% 0%) !important;
-    border-left: 6px solid hwb(212 18% 25%) !important;
+    color: hwb(218 60% 20%) !important;
+    border-left: 6px solid hwb(212 32% 46%) !important;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     @include relative-font-size(1.0625);
     font-style: normal !important;
 
@@ -63,11 +65,11 @@ blockquote {
 }
 
 details {
-    background: hwb(284 18% 25% / 0.15) !important;
+    background: hwb(113 12% 52% / 0.15) !important;
     padding: 10px 15px 10px 15px !important;
     margin: 0px 0px 15px !important;
-    color: hwb(216 81% 0%) !important;
-    border-left: 10px solid hwb(284 18% 25%) !important;
+    color: hwb(148 60% 20%) !important;
+    border-left: 10px solid hwb(148 18% 25%) !important;
     @include relative-font-size(1.0625);
     font-style: normal !important;
 
@@ -81,7 +83,7 @@ details {
 }
 
 summary + div {
-    border-top: 5px solid hwb(284 18% 25% / 0.5);
+    border-top: 5px solid hwb(148 18% 25% / 0.5);
     padding-top: 5px;
     margin-top: 10px;
 }
@@ -104,8 +106,9 @@ img {
 }
 
 li.post-entry {
-    border-style: dashed;
+    border-style: solid;
     border-width: 3px;
     border-color: rgba(255, 255, 255, 0.39);
     padding: 5px;
+    border-radius: 15px;
 }
