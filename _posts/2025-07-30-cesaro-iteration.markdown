@@ -90,16 +90,7 @@ I call such an averaging operator a *Cesàro limit*
 
 > **Question**: Can we define such an average?
 
-#### Banach Limits
-
-I found a weaker version of sequence averages called a *Banach limit*. According to Wikipedia, a Banach limit is an operator $\phi$ such that
-* $\phi$ is linear
-* If $a_n \ge 0$ for all $n$, then $\phi(a_n)\ge 0$
-* $\phi(a_n) = \phi(a_{n+1})$
-* If $(a_n)\to a$, then $\phi(a_n) = a$.
-
-My Cesàro limit is a special case of a Banach limit. Apparently, any complete construction of a Banach limit requires the axiom of choice, therefore the Cesàro limit will also require AoC to construct (if it even exists).
 
 ### Conclusion
 
-In the future, I will try to show that Cesàro limits exist. It's been put in my [conjectures]({% link conjectures.md%} ) list.
+In the future, I will try to show that a generalized average exists. It's been put in my [conjectures]({% link conjectures.md%} ) list.
