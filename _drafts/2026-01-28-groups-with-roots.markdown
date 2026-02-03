@@ -9,7 +9,7 @@ I want to see if groups can be extended by adding new elements in a way so that 
 
 ### Example: $\mathbb{Z}_2$
 
-The simplest group to start with is $\mathbb{Z}_2$. Just to make things nicer, I will interpret this as the group $\{1,-1\}$ under multiplication.
+The simplest group to start with is $\mathbb{Z}_2$. Just to make things nicer, I shall interpret this as the group $\{1,-1\}$ under multiplication.
 
 If $n$ is odd, then there is no problem; every element is its own $n^{th}$ root. But if $n$ is even, then no element will have $-1$ as its square. So we can try inserting $\sqrt{-1} = i$. After combining $i$ with all the group elements, we end up with the group $\{1,i,-1,-i\}$.
 
