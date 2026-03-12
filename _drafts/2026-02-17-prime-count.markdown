@@ -1,5 +1,5 @@
 ---
-title: Fastly Counting Primes
+title: Fastly Counting, Summing, and Multiplying Primes
 author: Catman
 layout: post
 long: true
