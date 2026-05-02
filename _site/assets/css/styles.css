@@ -1,0 +1,82 @@
+.current {
+  color: red;
+}
+
+body {
+  background: url(/assets/images/background.png) !important;
+  background-size: 100% 100%;
+  box-shadow: inset 0 0 0 2000px rgba(172, 187, 239, 0.97);
+  color: rgb(25, 31, 52);
+  font-size: 20px;
+  margin: 0;
+}
+
+h1 {
+  color: rgb(172, 32, 32);
+}
+
+h2 {
+  color: rgb(32, 20, 91);
+}
+
+h3 {
+  color: rgb(45, 80, 10);
+}
+
+h4 {
+  color: rgb(14, 124, 136);
+}
+
+h5 {
+  color: rgb(19, 58, 99);
+}
+
+h6 {
+  color: rgb(107, 28, 107);
+}
+
+img {
+  display: block;
+  margin: auto;
+}
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar a {
+  float: right;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  text-align: center;
+}
+
+.content {
+  padding: 60px;
+}
+
+blockquote {
+  margin-left: 0;
+  padding: 1px 24px;
+  background-color: rgba(84, 164, 191, 0.482);
+  border-left: 6px solid rgb(31, 79, 95);
+  border-radius: 0px 6px 6px 0px;
+}
+
+details {
+  margin-left: 0;
+  padding: 1px 24px;
+  background-color: rgba(84, 164, 191, 0.482);
+  border-left: 6px solid rgb(31, 79, 95);
+  border-radius: 0px 6px 6px 0px;
+}
+
+hr {
+  border: 2px solid hsl(216, 45.4545454545%, 38.5%) !important;
+}
+
+/*# sourceMappingURL=styles.css.map */

@@ -54,7 +54,7 @@ where the length of the run doubles after each switch. It's not too hard to see 
 
 Let $(C^k a_n)$ denote the sequence $(a_n)$ after $k$ iterations of the Cesàro mean. In the graph below, the purple points represent $(a_n)$, the blue points represent $(C^1a_n)$, and the green points represent $(C^2 a_n)$. It seems like $(C^2a_n)$ either already converges to $1/2$, or at least oscillates between two points which are really close together.
 
-![alt text](/assets/2025-07-30-cesaro-example.png)
+![alt text](/assets/images/2025-07-30-cesaro-example.png)
 
 > **Conjecture**: For this particular sequence,
 > 
@@ -93,4 +93,4 @@ I call such an averaging operator a *Cesàro limit*
 
 ### Conclusion
 
-In the future, I will try to show that a generalized average exists. It's been put in my [conjectures]({% link conjectures.md%} ) list.
+In the future, I will try to show that a generalized average exists.

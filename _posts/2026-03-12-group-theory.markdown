@@ -5,17 +5,33 @@ layout: post
 long: true
 ---
 
-I've been taking a course on abstract algebra with a big focus on group theory. In this post, I want to summarize my thoughts on the subject so far
+After taking a course on group theory, I've decided to write a series giving my thoughts on the subject.
 
-### Definition of a Group
-For reference, here is the formal definition of a group.
+### Motivating the Definition
 
-> A *group* is a set $G$ with an operation $\circ:G\times G\to G$ such that
-> * The operation is associative.
-> * There is an element $1$ called the identity, such that $1\circ g = g\circ 1 = g$ for all $g\in G$.
-> * For every $g$, there is an inverse $g^{-1}$ such that $g\circ g^{-1} = g^{-1}\circ g = 1$.
+To truly appreciate how groups work, let's first consider sets of functions. Let $\mathcal{F}$ be a collection of functions from $X$ to itself.
 
-### Motivation
+Naturally, we can compose these functions. It can be inconvenient if such a composition were to leave $\mathcal{F}$. So, a nice property for $\mathcal{F}$ is being *closed*, meaning that compositions of functions from $\mathcal{F}$ remain in $\mathcal{F}$.
+
+If $\mathcal{F}$ was not closed, then you can look at the collection $\gen{\mathcal{F}}$ of all ways to compose functions of $\mathcal{F}$. I'll call the *closure* of $\mathcal{F}$, and you can check that this is closed.
+
+#### Associativity
+
+One extremely important property of function composition is associativity; for all $f,g,h\in\mathcal{F}$, we have $f\circ(g\circ h) = (f\circ g)\circ h$. In fact, associativity is the property that makes a binary operation act like function composition.
+
+To see this, suppose we have an associative binary operation on $S$. For each $a\in S$, let $f_a:S\to S$ be the function
+
+$$f_a(x) = a\cdot x$$
+
+Notice that $f_a\circ f_b = f_{a\cdot b}$, so this function composition reflects the original operation.
+
+To summarize, whenever you see an associative operation, think about how the set's elements could act like functions.
+
+#### Groups
+
+To get the idea of a group, start with what we've already done with associativity and function composition.
+
+
 Why is this structure so important? I think the best motivation comes from what are called *group actions*. For instance, consider all the ways you can transform a square without changing its position. Here is a diagram (called a *Cayley graph*) showing these actions.
 
 <img src="/assets/2026-03-02-cayley-graph-dihedral.png" width="75%"/>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          processEscapes: true
+        }
+      });
+    </script>
+    <meta charset="utf-8">
+    <title>Intro to Group Theory</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <div class="navbar">
+  
+    <a href="/">Home</a>
+  
+    <a href="/about.html">About</a>
+  
+    <a href="/blog.html">Posts</a>
+  
+</div>
+    <div class="content">
+      <h1>Intro to Group Theory</h1>
+<p>12 Mar 2026 - Catman</p>
+
+<p>After taking a course on group theory, I’ve decided to write a series giving my thoughts on the subject.</p>
+
+<h3 id="motivating-the-definition">Motivating the Definition</h3>
+
+<p>To truly appreciate how groups work, let’s first consider sets of functions. Let $\mathcal{F}$ be a collection of functions from $X$ to itself.</p>
+
+<p>Naturally, we can compose these functions. It can be inconvenient if such a composition were to leave $\mathcal{F}$. So, a nice property for $\mathcal{F}$ is being <em>closed</em>, meaning that compositions of functions from $\mathcal{F}$ remain in $\mathcal{F}$.</p>
+
+<p>If $\mathcal{F}$ was not closed, then you can look at the collection $\gen{\mathcal{F}}$ of all ways to compose functions of $\mathcal{F}$. I’ll call the <em>closure</em> of $\mathcal{F}$, and you can check that this is closed.</p>
+
+<h4 id="associativity">Associativity</h4>
+
+<p>One extremely important property of function composition is associativity; for all $f,g,h\in\mathcal{F}$, we have $f\circ(g\circ h) = (f\circ g)\circ h$. In fact, associativity is the property that makes a binary operation act like function composition.</p>
+
+<p>To see this, suppose we have an associative binary operation on $S$. For each $a\in S$, let $f_a:S\to S$ be the function</p>
+
+\[f_a(x) = a\cdot x\]
+
+<p>Notice that $f_a\circ f_b = f_{a\cdot b}$, so this function composition reflects the original operation.</p>
+
+<p>To summarize, whenever you see an associative operation, think about how the set’s elements could act like functions.</p>
+
+<h4 id="groups">Groups</h4>
+
+<p>To get the idea of a group, start with what we’ve already done with associativity and function composition.</p>
+
+<p>Why is this structure so important? I think the best motivation comes from what are called <em>group actions</em>. For instance, consider all the ways you can transform a square without changing its position. Here is a diagram (called a <em>Cayley graph</em>) showing these actions.</p>
+
+<p><img src="/assets/2026-03-02-cayley-graph-dihedral.png" width="75%" /></p>
+
+<p>The top row contains the 4 rotations, and the bottom row has 4 reflections.</p>
+
+<p>These transformations together form a group called $D_4$, where the operation is composition (which is associative). A very important point is that all of these transformations can be reversed. For example, if you rotate clockwise by $90^{\circ}$, then you can undo this by rotating $270^{\circ}$, and any reflection here is its own inverse.</p>
+
+<p>So with this example in mind, here is a breakdown of why each group axiom is important.</p>
+<ul>
+  <li><em>Associativity</em> allows us to think of any binary operation as function composition.</li>
+  <li><em>Inverses</em> ensure that every transformation is reversible, in the sense that composing an element with its inverse is the same as doing nothing (the <em>identity</em>).</li>
+</ul>
+
+<p>My first claim about associativity was quite bold and needs further explanation.</p>
+
+<h4 id="the-importance-of-associativity">The Importance of Associativity</h4>
+
+<p>It’s easy to see that function composition is an associative operation. But it actually goes the other way; any set with an associative operation is isomorphic to a set of functions under composition!</p>
+
+<details><summary>
+<strong>Theorem: </strong> Every associative binary operation $*:S\times S\to S$ with an identity $1$ is isomorphic to a set of functions under composition (specifically, functions on $S$).
+</summary>
+<div>
+
+    <p><em>Proof.</em>
+Let $ * $ be an associative binary operation on $S$ with identity $1$. 
+For each $x\in S$, let $f_x:S\to S$ be defined by $f_x(y) = x * y$.
+We will show $(S,*)$ is isomorphic to
+$\{f_x\mid x\in S\}$ under function composition. The homomorphism part really comes down to the associative property:</p>
+
+\[(f_{x}\circ f_{y})(z) = x * (y * z) = (x * y) * z = f_{x * y}(z)\]
+
+    <p>Also, the map $x\mapsto f_x$ has an inverse, $f_x\mapsto f_x(1)$. That’s why the identity is required in this proof.</p>
+  </div>
+</details>
+
+<p>That argument only worked when an identity exists, but we can extend any $(S,*)$ to include an identity element and essentially repeat the same argument.</p>
+
+<p>An example where this would be required is the operation where $x * y = y$. The corresponding left multiplication functions would all be the same! That’s the issue solved by adding an identity element.</p>
+
+<p>So what we’ve shown is that associativity is deeply related with function composition, so I’d say it’s quite an important property.
+When these transformations can be inverted, we get the wonderful structure of groups.</p>
+
+<blockquote>
+  <p><em>Summary</em>: Groups can be interpreted as a collection of invertible transformations</p>
+</blockquote>
+
+<p>I hope this makes groups a bit more interesting and motivated than just a collection of abstract axioms.</p>
+
+<h3 id="more-examples">More Examples</h3>
+
+<ul>
+  <li>Addition and multiplication acts on $\mathbb{R}$ by shifting and scaling by real amounts. Note that scaling by a factor of zero is not reversible, so not included in the group.</li>
+  <li>$n\times n$ matrices are linear transformations of $\mathbb{R}^n$. The linear transformations with inverses form a group.</li>
+  <li>A regular $n$-gon can be transformed with $n$ rotations. These rotations form a group called $\mathbb{Z}_n$.
+    <ul>
+      <li>You can add in the $n$ reflections, giving you the group $D_n$ which I discussed earlier.</li>
+    </ul>
+  </li>
+  <li>The move sequences of a Rubik’s cube act on its positions.</li>
+</ul>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>Group actions are cool.</p>
+
+    </div>
+  </body>
+</html>

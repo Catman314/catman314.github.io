@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          processEscapes: true
+        }
+      });
+    </script>
+    <meta charset="utf-8">
+    <title>Cardinality of Infinite Symmetry Groups</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <div class="navbar">
+  
+    <a href="/">Home</a>
+  
+    <a href="/about.html">About</a>
+  
+    <a href="/blog.html">Posts</a>
+  
+</div>
+    <div class="content">
+      <h1>Cardinality of Infinite Symmetry Groups</h1>
+<p>20 Feb 2026 - Catman</p>
+
+<blockquote>
+  <p>We will show that if $X$ is infinite, then in terms of cardinality, there are as many bijections as there are functions from $X\to X$.</p>
+</blockquote>
+
+<h3 id="notation">Notation</h3>
+<ul>
+  <li>$S_X$ denotes the set of permutations of $X$.</li>
+  <li>$X^Y$ is the set of all functions from $X\to Y$.</li>
+  <li>The $\inj$ arrow denotes an injection.</li>
+  <li>The $\bij$ arrow denotes a bijection.</li>
+</ul>
+
+<h3 id="intro">Intro</h3>
+
+<p>My approach will be to construct a cycle of inequalities</p>
+
+\[|\mathcal{P}(X)|\le |S_X|\le |X^X|\le |\mathcal{P}(X)|,\]
+
+<p>which will show that these sets all have the same cardinality by the Schroder-Bernstein theorem.</p>
+
+<p>The injection $S_X\inj X^X$ is easy; the inclusion map. The other two are more difficult.</p>
+
+<h3 id="zorns-lemma-is-cool">Zorn’s Lemma is Cool</h3>
+
+<p>Now we show that if $X$ is infinite, then
+$|X^X| \le |\mathcal{P}(X)|$.
+We have $X^X\subseteq\mathcal{P}(X\times X)$ by definition. It will be sufficient to show that
+$|X\times X| = |X|$, a rather strange result.</p>
+
+<details><summary>
+<strong>Theorem: </strong> Let $X$ and $Y$ be equinumerous disjoint infinite sets. Then $|X\cup Y|$ has the same cardinality as $|X|$.
+</summary>
+<div>
+
+    <p><em>Proof.</em> Suppose $X$ and $Y$ are equinumerous disjoint infinite sets, with a bijection $\varphi:X\bij Y$. Define</p>
+
+\[\mathcal{B} := \{f:A\cup\varphi(A)\bij A\mid A\subseteq X, A\text{ is infinite}\},\]
+
+    <p>partially ordered by function extension. Since $X$ is infinite, it contains a countably infinite subset $Z$, and the sets $Z\cup \varphi(Z)$ and $Z$ have the same cardinality, so $\mathcal{B}$ is nonempty.</p>
+
+    <p>A chain in $\mathcal{B}$ has an upper bound in $\mathcal{B}$ obtained by unioning the domains. Therefore, Zorn’s lemma states that $\mathcal{B}$ has a maximal element, say $g:B\cup\varphi(B)\bij B$ for some $B\subseteq X$.</p>
+
+    <p>Assume for the sake of contradiction that $X\setminus B$ is infinite. Then there is some countably infinite $Z\subseteq X$ which is disjoint with $B$. But then $g$’s domain can be extended to include $Z\cup \varphi(Z)$ because a bijection $Z\cup\varphi(Z)\bij Z$ exists. This contradicts the maximality of $g$, thus $X\setminus B$ is finite.</p>
+
+    <p>Because $X$ is infinite and $X\setminus B$ is finite, we have
+$|B| = |X|$, so there is a bijection $h:X\bij B$, and finally the bijection</p>
+
+\[h^{-1}\circ g\circ (h\cup (\varphi\circ h\circ \varphi^{-1})):X\cup Y\bij X.\]
+
+  </div>
+</details>
+
+<details><summary>
+<strong>Theorem: </strong> If $X$ is infinite, then
+$|X| = |X\times X|$.
+</summary>
+<div>
+
+    <p><em>Proof.</em> Let $X$ be an infinite set. Let $\mathcal{B}$ be the set of bijections $Y\times Y\bij Y$ for infinite subsets $Y\subseteq X$, ordered by function extension.</p>
+
+    <p>Since $X$ has a countably infinite subset, $\mathcal{B}$ is nonempty because
+$|\mathbb{N}\times\mathbb{N}| = |\mathbb{N}|.$</p>
+
+    <p>Every chain in $\mathcal{B}$ has an upper bound in $\mathcal{B}$ by unioning the domains. Therefore, by Zorn’s lemma, $\mathcal{B}$ has some maximal element, say $f:A\times A\bij A$.</p>
+
+    <p>We will now show that
+$|A| = |X|$. Assuming that
+$|A| &lt; |X|$, then
+$|X - A|$ contains a subset $B$ with equal cardinality to $A$. Then all the sets</p>
+
+\[A, B, A\times A, A\times B, B\times A, B\times B\]
+
+    <p>have the same cardinality, so by the disjoint union theorem above, we have</p>
+
+\[|(A\times B)\cup (B\times A)\cup (B\times B)| = |B|.\]
+
+    <p>We can use this to extend $f$ to the domain $(A\cup B)\times (A\cup B)$, contradicting the maximality of $f$. Therefore,
+$|A| = |X|$, and so</p>
+
+\[|X| = |X\times X|.\]
+
+  </div>
+</details>
+
+<p>We now have the second inequality of the trio.</p>
+
+<h3 id="a-bijection-for-each-subset">A Bijection for each Subset</h3>
+
+<p>All that remains is to find an injection $\mathcal{P}(X)\inj S_X$. We will use the fact that
+\(|X| = |X\times\{0,1\}|,\)
+which is essentially the disjoint union theorem above. Let \(\varphi:X\bij X\times\{0,1\}\). Define \(f:\mathcal{P}(X)\to S_{X\times\{0,1\}}\) by</p>
+
+\[\begin{align*}
+  f(A) &amp;:= f_A \\
+  f_A(x,\lambda) &amp;:= \begin{cases}
+    (x, 1 - \lambda) &amp; x\in A \\
+    (x, \lambda) &amp; x\notin A.
+  \end{cases}
+\end{align*}\]
+
+<p>It’s easy to check that $f$ is injective, so that’s the final inequality.</p>
+
+<p>Therefore,
+$|S_X| = |X^X|$. There are as many bijections as there are functions from $X\to X$ when $X$ is infinite. That is weird. Ok bye.</p>
+
+    </div>
+  </body>
+</html>

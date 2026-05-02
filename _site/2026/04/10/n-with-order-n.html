@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          processEscapes: true
+        }
+      });
+    </script>
+    <meta charset="utf-8">
+    <title>Groups with Exactly $n$ elements of order $n$</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <div class="navbar">
+  
+    <a href="/">Home</a>
+  
+    <a href="/about.html">About</a>
+  
+    <a href="/blog.html">Posts</a>
+  
+</div>
+    <div class="content">
+      <h1>Groups with Exactly $n$ elements of order $n$</h1>
+<p>10 Apr 2026 - Catman</p>
+
+<p>$\newcommand{\lra}[1]{\left\langle #1 \right\rangle}$</p>
+<blockquote>
+  <p>For what $n$ can there exist a group with exactly $n$ elements of order $n$?</p>
+</blockquote>
+
+<h2 id="intro">Intro</h2>
+<p>In my abstract algebra class, we were given the following problem:</p>
+<blockquote>
+  <p>Let $p$ be an odd prime. Show that there is no group with exactly $p$ elements of order $p$.</p>
+</blockquote>
+
+<p>This problem was very fascinating to me, and I wanted to see how far I could take it. In this post, I will show exactly for which $n$ there exist groups with exactly $n$ elements of order $n$.</p>
+
+<h2 id="solution-to-the-first-problem">Solution to the First Problem</h2>
+<p>Let $G$ be a group.</p>
+
+<p>Suppose we have an element $g\in G$ with order $p$. Then the key is to look at the cyclic group $\lra{g}$, which contributes an entire $p-1$ elements with order $p$ (everything except the identity).</p>
+
+<p>Looking at all these cyclic subgroup, we end up separating the elements of order $p$ into clusters of size $p-1$, as shown in this flower-like diagram:</p>
+
+<p><img src="/assets/images/2026-04-10-cyclic-subgroup-flower.png" width="50%" /></p>
+
+<p>If two cyclic subgroups share a common generator, they are clearly the same subgroup, so this really is a partition.</p>
+
+<p>So, the number of elements with order $p$ is a multiple of $p-1$<sup id="fnref:1"><a href="#fn:1" class="footnote" rel="footnote" role="doc-noteref">1</a></sup>. If $p\ge 3$, we have</p>
+
+\[p\equiv 1 \not\equiv 0\pmod{p-1}\]
+
+<p>Notice that this fails when $p=2$; $2$ is indeed a multiple of $1$. But as it turns out, we can solve the case $p=2$ a different way!</p>
+
+<h2 id="p--2">$p = 2$</h2>
+
+<p>If a group $G$ has two elements of order $2$, say $g$ and $h$, then</p>
+<ul>
+  <li>If $G$ is abelian, then $gh$ is a third element of order 2</li>
+  <li>If $G$ is nonabelian, then $ghg^{-1}$ is a third element of order 2</li>
+</ul>
+
+<p>A side question: If $G$ is <em>finite</em>, then the number of elements with order $2$ is odd, which is seen by noting that
+$|G|$ is even and the elements with order greater than $2$ can be paired by inverses. Is this also true when $G$ is infinite?</p>
+
+<p>I suspect that something like this can be done with larger values of $p$ also.</p>
+
+<h2 id="general-n">General $n$</h2>
+
+<p>Now consider any positive integer $n &gt; 1$. The flower diagram of elements with order $n$ is still valid, but there may not be exactly $n-1$ generators in each petal.</p>
+
+<p>Instead, there will be $\phi(n)$ in each cluster, where $\phi(n)$ is the number of positive integers up to $n$ relatively prime to $n$. The function $\phi$ is called <em>Euler’s totient function</em>, and has some very nice properties. Importantly for us, we can use the prime factorization of $n$ to evaluate $\phi(n)$ in closed form:</p>
+
+\[\phi(n) = \phi(p_1^{a_1}\dots p_k^{a_k}) = n\cdot\frac{p_1-1}{p_1}\cdots\frac{p_k-1}{p_k}\]
+
+<p>If $G$ has exactly $n$ elements of order $n$, then we must have $\phi(n)\mid n$.</p>
+
+<h3 id="solving-phinmid-n">Solving $\phi(n)\mid n$</h3>
+
+<p>Let $n = p_1^{k_1}\dots p_k^{a_k}$, where $p_k$ is the largest prime factor of $n$. In order for $\phi(n)\mid n$ to be true, we must have</p>
+
+\[\frac{p_1-1}{p_1}\cdots\frac{p_k-1}{p_k} = \frac{1}{M}\]
+
+<p>for some integer $M$. Notice that the prime factor $p_k$ cannot be canceled from the denominator because every term in the numerator is below $p_k$. Therefore, $M\ge p_k$.</p>
+
+<p>On the other hand, we can get the reverse inequality by inserting more terms on the left product:</p>
+
+\[\frac{1}{p_k} = \prod_{j=2}^{p_k}\frac{j-1}{j} \le \frac{p_1-1}{p_1}\cdots\frac{p_k-1}{p_k} = \frac{1}{M} \implies M \le p_k.\]
+
+<p>Therefore, $M = p_k$. This is a huge restriction! Now, we have</p>
+
+\[\prod_{j=2}^{p_k}\frac{j-1}{j} = \frac{p_1-1}{p_1}\cdots\frac{p_k-1}{p_k},\]
+
+<p>so the prime factors of $n$ must include every integer from $2$ to $p_k$ in order to keep the equality. So \(p_k\in\{2,3\}\). This means $n$ has the form $2^{j}3^{k}$, where $j &gt; 0$.</p>
+
+<h3 id="finding-groups">Finding Groups</h3>
+
+<p>Now suppose $n = 2^{j}3^{k}$ with $j &gt; 0$. We want to find a group with $n$ elements of order $n$. We’ve seen that this is impossible with $n = 2$, but what about the other cases?</p>
+
+<p>If $n = 2^{j}$ with $j &gt; 1$, then the group $\mathbb{Z}_n\times\mathbb{Z}_2$ is what we’re looking for.</p>
+
+<p>If $n = 2^{j}3^{k}$ with $j,k &gt; 0$, then the group $\mathbb{Z}_n\times\mathbb{Z}_3$ works.</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<blockquote>
+  <p>If $n\in\mathbb{N}$, there exists a group with exactly $n$ elements of order $n$ if and only if</p>
+  <ul>
+    <li>$n = 1$ or</li>
+    <li>$n &gt; 2$ and $n = 2^{j}3^{k}$ for some $j&gt;0,k\ge 0$.</li>
+  </ul>
+</blockquote>
+
+<p>There is still more left to discover. For example:</p>
+
+<ul>
+  <li>If a group has elements of order 2, is that count an odd number, even when the group is infinite?</li>
+  <li>Are there any more restrictions on the number of elements with order $n$, besides being a multiple of $\phi(n)$? The case of $n=2$ seems to indicate this.</li>
+</ul>
+
+<hr />
+
+<div class="footnotes" role="doc-endnotes">
+  <ol>
+    <li id="fn:1">
+      <p>or infinite. We’ll ignore that case. <a href="#fnref:1" class="reversefootnote" role="doc-backlink">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+    </div>
+  </body>
+</html>
