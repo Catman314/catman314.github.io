@@ -4,7 +4,7 @@ author: Catman
 layout: post
 long: true
 ---
-$\newcommand{\lra}[1]{\left\langle #1 \right\rangle}$
+<div style="display: none; max-height: 0px;">$\newcommand{\lra}[1]{\left\langle #1 \right\rangle}$</div>
 > For what $n$ can there exist a group with exactly $n$ elements of order $n$?
 
 ## Intro
