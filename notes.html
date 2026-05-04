@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+<h1>My Notes</h1>
+I'm in the process of collecting all of my math notes here.
+
+<ul class="topics-list">
+  {%- for topic in site.data.topics %}
+  <li>
+    <a href="{{topic[1].link}}">{{topic[1].title}}</a></li>
+  {%- endfor %}
+</ul>
