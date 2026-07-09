@@ -5,7 +5,7 @@ layout: post
 long: true
 ---
 
-> I discuss Cesàro means and a problem I invented about them.
+> I discuss Cesàro means and pose a problem.
 
 ### Cesàro Means
 

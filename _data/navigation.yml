@@ -4,5 +4,5 @@
   link: /about.html
 - name: Posts
   link: /blog.html
-- name: Notes
-  link: /notes.html
+# - name: Notes
+#   link: /notes.html
